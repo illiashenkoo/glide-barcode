@@ -4,7 +4,7 @@
 GlideBarcode is an open-source barcode loading extension for Android Glide that wraps barcode generating and displaying.
 
 ## Example
-[Gradle](images/sample_1.png)
+![](images/sample_1.png)
 
 ## Integration ![Gradle](images/logo_gradle_kotlin.png)
 Step 1. Add the JitPack repository to your root build.gradle at the end of repositories.
