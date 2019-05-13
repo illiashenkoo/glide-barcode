@@ -1,5 +1,6 @@
 # Glide-Barcode
-[![](https://jitpack.io/v/illiashenkoo/glide-barcode.svg)](https://jitpack.io/#illiashenkoo/glide-barcode)
+[![JitPack](https://jitpack.io/v/illiashenkoo/glide-barcode.svg)](https://jitpack.io/#illiashenkoo/glide-barcode)
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Glide--Barcode-green.svg?style=flat )]( https://android-arsenal.com/details/1/7661 )
 
 GlideBarcode is an open-source barcode loading extension for Android Glide that wraps barcode generating and displaying.
 
