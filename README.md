@@ -29,7 +29,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:X.X.X'
     kapt 'com.github.bumptech.glide:compiler:X.X.X'
     
-    implementation 'com.github.illiashenkoo.glide-barcode:glide-barcode:X.X.X'
+    implementation 'com.github.illiashenkoo:glide-barcode:X.X.X'
 }
 ```
 ## Example of use

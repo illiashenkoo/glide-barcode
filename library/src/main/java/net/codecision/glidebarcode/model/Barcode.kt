@@ -12,7 +12,12 @@ data class Barcode(
     constructor(
         contents: String,
         format: BarcodeFormat
-    ) : this(contents, format, BLACK, WHITE)
+    ) : this(
+        contents,
+        format,
+        BLACK,
+        WHITE
+    )
 
     companion object {
         private const val WHITE = 0xFFFFFFFF.toInt()
