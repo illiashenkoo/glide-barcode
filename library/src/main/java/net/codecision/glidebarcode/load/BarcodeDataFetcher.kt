@@ -1,8 +1,6 @@
 package net.codecision.glidebarcode.load
 
-
 import android.graphics.Bitmap
-import android.os.Looper
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.data.DataFetcher
