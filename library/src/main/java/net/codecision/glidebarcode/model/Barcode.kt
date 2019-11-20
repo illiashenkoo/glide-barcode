@@ -1,12 +1,14 @@
 package net.codecision.glidebarcode.model
 
 import com.google.zxing.BarcodeFormat
+import com.google.zxing.EncodeHintType
 
 data class Barcode(
     val contents: String,
     val format: BarcodeFormat,
     var contentColor: Int,
-    var backgroundColor: Int
+    var backgroundColor: Int,
+    var hints: Map<EncodeHintType, *>? = null
 ) {
 
     constructor(
@@ -17,6 +19,18 @@ data class Barcode(
         format,
         BLACK,
         WHITE
+    )
+
+    constructor(
+        contents: String,
+        format: BarcodeFormat,
+        hints: Map<EncodeHintType, *>
+    ) : this(
+        contents,
+        format,
+        BLACK,
+        WHITE,
+        hints
     )
 
     companion object {

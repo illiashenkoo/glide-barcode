@@ -4,14 +4,10 @@ import android.graphics.Bitmap
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.data.DataFetcher
-import com.google.zxing.EncodeHintType
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
 import com.google.zxing.common.BitMatrix
-import com.google.zxing.common.CharacterSetECI
-import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
 import net.codecision.glidebarcode.model.Barcode
-import java.util.*
 
 class BarcodeDataFetcher(
     private val barcode: Barcode,
@@ -42,11 +38,6 @@ class BarcodeDataFetcher(
 
     @Throws(WriterException::class)
     private fun generateBarcode(barcode: Barcode, width: Int, height: Int): Bitmap {
-        val hints = EnumMap<EncodeHintType, Any>(EncodeHintType::class.java)
-        hints[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.H
-        hints[EncodeHintType.CHARACTER_SET] = CharacterSetECI.UTF8
-        hints[EncodeHintType.MARGIN] = 0
-
         val safetyWidth = if (width == 0) DEFAULT_BARCODE_SIZE else width
         val safetyHeight = if (height == 0) DEFAULT_BARCODE_SIZE else height
 
@@ -56,7 +47,7 @@ class BarcodeDataFetcher(
             barcode.format,
             safetyWidth,
             safetyHeight,
-            hints
+            barcode.hints
         )
 
         return createBitmap(bitMatrix, barcode.contentColor, barcode.backgroundColor)
