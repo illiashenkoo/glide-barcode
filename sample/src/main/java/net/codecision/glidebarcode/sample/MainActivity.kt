@@ -5,14 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.google.zxing.BarcodeFormat
-import kotlinx.android.synthetic.main.activity_main.*
 import net.codecision.glidebarcode.model.Barcode
+import net.codecision.glidebarcode.sample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
 
         showFirstQr()
 
@@ -27,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(barcode)
-            .into(firstQrView)
+            .into(binding.firstQrView)
     }
 
     private fun showSecondQr() {
@@ -35,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(barcode)
-            .into(secondQrView)
+            .into(binding.secondQrView)
     }
 
     private fun showEan13() {
@@ -44,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(barcode)
-            .into(ean13View)
+            .into(binding.ean13View)
     }
 
 }
