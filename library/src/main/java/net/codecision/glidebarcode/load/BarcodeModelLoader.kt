@@ -13,7 +13,7 @@ class BarcodeModelLoader : ModelLoader<Barcode, Bitmap> {
         width: Int,
         height: Int,
         options: Options
-    ): ModelLoader.LoadData<Bitmap>? {
+    ): ModelLoader.LoadData<Bitmap> {
         return ModelLoader.LoadData(
             ObjectKey(barcode),
             BarcodeDataFetcher(barcode, width, height)
